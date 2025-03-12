@@ -1,0 +1,195 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px; /* Adiciona padding para evitar cortes nas bordas */
+  box-sizing: border-box;
+}
+
+.login-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px; /* Largura máxima para telas maiores */
+}
+
+.login-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.instagram-logo {
+  width: 175px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+
+input {
+  width: 100%; /* Ocupa 100% da largura do container */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.buttoniniciar {
+  width: 100%; /* Ocupa 100% da largura do container */
+  padding: 8px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #4CB5F9;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.facebook-login {
+  width: 100%; /* Ocupa 100% da largura do container */
+  padding: 8px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: #4CB5F9;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facebook-icon {
+  width: 20px; /* Tamanho pequeno para a imagem do Facebook */
+  height: 20px; /* Mantém a proporção */
+  margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #8e8e8e;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+a {
+  color: #00376b;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.signup-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.app-download {
+  text-align: center;
+}
+
+.app-stores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.app-stores img {
+  height: 40px;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #8e8e8e;
+  font-size: 12px;
+}
+
+.language select {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.copyright {
+  color: #8e8e8e;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.message {
+  color: #0095f6;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Reduz o padding para telas menores */
+  }
+
+  .instagram-logo {
+    width: 150px; /* Reduz o tamanho da logo para telas menores */
+  }
+
+  .app-stores img {
+    height: 35px; /* Reduz o tamanho das imagens das lojas de aplicativos */
+  }
+
+  .footer-links {
+    flex-direction: column; /* Alinha os links do footer em coluna */
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram-logo {
+    width: 130px; /* Reduz ainda mais o tamanho da logo para telas muito pequenas */
+  }
+
+  .app-stores img {
+    height: 30px; /* Reduz o tamanho das imagens das lojas de aplicativos */
+  }
+
+  .footer-links a {
+    font-size: 10px; /* Reduz o tamanho da fonte dos links do footer */
+  }
+}
