@@ -34,7 +34,7 @@ function App() {
         <form onSubmit={handleRegister}>
           <input
             type="email"
-            placeholder="nome do utilizador ou email"
+            placeholder="Nome de utilizador ou email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
