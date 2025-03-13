@@ -188,6 +188,17 @@ a {
     gap: 5px;
   }
 }
+.not-found {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  text-align: start;
+}
+
 
 @media (max-width: 480px) {
   .instagram-logo {
